@@ -36,6 +36,9 @@
  * 
  */
 
+import java.time.format.DateTimeFormatter;  
+import java.time.LocalDateTime;
+
 public class BubbleSort {
 
 	/*
@@ -59,7 +62,8 @@ public class BubbleSort {
 	 * It can be optimized by stopping the algorithm if inner loop didn’t cause any swap.
 	 */
 	void basicBubbleSort(int arr[], boolean verbose) {
-		System.out.println("Basic Bubble Sort Initial Array: " + this.printArray(arr));
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss:SSSS");   
+		System.out.println("("+dtf.format(LocalDateTime.now())+"): Basic Bubble Sort Initial Array: " + this.printArray(arr));
 		
 		int n = arr.length; 	//length of array
 		int step = 1; 			//number of steps taken in sort - used to compare basic and optimized sorts
@@ -75,7 +79,7 @@ public class BubbleSort {
                 else if (verbose) this.printVebose("**No Swap", step++, i, j, arr);
             }
         
-        System.out.println("Sorted Array: " +this.printArray(arr));
+        System.out.println("("+dtf.format(LocalDateTime.now())+"):Sorted Array: " +this.printArray(arr));
 		System.out.println();
 	}
 	
@@ -94,7 +98,8 @@ public class BubbleSort {
 	 * 
 	 */
 	void optimizedBubbleSort(int arr[], boolean verbose) {
-		System.out.println("Basic Bubble Sort Initial Array: " + this.printArray(arr));
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss:SSSS"); 
+		System.out.println("("+dtf.format(LocalDateTime.now())+"):Basic Bubble Sort Initial Array: " + this.printArray(arr));
 		
 		int n = arr.length; 	//length of array
         int step = 1;			//number of steps taken in sort - used to compare basic and optimized sorts
@@ -120,7 +125,7 @@ public class BubbleSort {
                 break; 
         }
         
-        System.out.println("Sorted Array: " +this.printArray(arr));
+        System.out.println("("+dtf.format(LocalDateTime.now())+"):Sorted Array: " +this.printArray(arr));
 		System.out.println();
 	}
 	
